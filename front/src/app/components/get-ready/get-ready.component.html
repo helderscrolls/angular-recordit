@@ -1,0 +1,88 @@
+<section
+  class="get-ready"
+  *ngIf="project"
+  >
+  <div class="bloc-total">
+    <div
+      class="chapter-bloc"
+      *ngFor="let chapter of project.index"
+    >
+      <div class="chapter-title">
+        <span>{{ chapter.name }}</span>
+
+        <app-description-popover [data]="chapter"></app-description-popover>
+
+        <i
+          class="icon fas fa-edit"
+          (click)="editDescription(chapter)"
+        ></i>
+
+      </div>
+      <div
+        (click)="selectObject(video, $event)"
+        *ngFor="let video of chapter.videos"
+      >
+        <span
+            class="video-grid"
+            [ngClass]="{selected: selectedVideo && selectedVideo.id === video.id}"
+        >
+          <a
+            class="link-video"
+            [innerHTML]="video.name"
+          >
+            {{ video.name }}
+          </a>
+
+          <i
+            class="icon check fas fa-check"
+            *ngIf="video.finished"
+          ></i>
+
+          <app-description-popover
+            [data]="video"
+            *ngIf="video.finished"
+          ></app-description-popover>
+
+          <i
+            class="fas fa-play-circle"
+            (click)="playRecordedVideo(video)"
+            *ngIf="video.finished"
+          ></i>
+
+          <i
+            class="icon fas fa-edit"
+            (click)="editDescription(video)"
+            *ngIf="video.description"
+          ></i>
+
+          <i
+            class="icon fas fa-trash"
+            (click)="openPopover(video.id)"
+            *ngIf="video.finished"
+          ></i>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="save">
+    <p
+      class="record-title"
+      [ngClass]="{disable: !goToRecord}"
+    >
+      Commencer l'enregistrement</p>
+    <button
+      class="recordButton"
+      (click)="startRecord()"
+      [ngClass]="{disable: !goToRecord}"
+      [disabled]="!goToRecord"
+    >
+      <span
+        class="red-dot"
+        [ngClass]="{disable: !goToRecord}"
+      ></span>
+    </button>
+  </div>
+</section>
+
+<app-description [ngClass]="{showDescriptionPanel: displayPanelsService.panels.description}"></app-description>

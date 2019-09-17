@@ -1,0 +1,46 @@
+@import '../../../styles/colors.scss';
+
+.img-logo {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    transition: all 0.8s ease;
+    width: 100px;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 290px;
+  }
+
+.actions {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    display: block;
+    width: 200px;
+  }
+}
+
+.second-section {
+  background-color: $blue;
+  bottom: 0;
+  height: 250px;
+  position: absolute;
+  width: 100%;
+
+  .img-section {
+    bottom: -50px;
+    width: 90%;
+    position: absolute;
+  }
+}
+

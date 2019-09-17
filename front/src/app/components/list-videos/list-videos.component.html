@@ -1,0 +1,38 @@
+<div class="display-videos-list">
+  <div class="bck-clr">
+    <ul>
+      <li *ngFor="let project of projectCollection; let i = index">
+        <div class="projectName">
+          <a (click)=showChapterList(i)><span>{{project.name | uppercase }}</span> </a>
+        </div>
+        <div class="projectLine"></div>
+        <ul>
+          <div class="containerChapter">
+            <div class="chapter-list" [ngClass]="{opened: showChapter && i === projectIndex}">
+              <li *ngFor="let chapter of project['chapters']; let i = index">
+                <div class="chapterName" (click)="showVideosList(i)">
+                  <span>{{chapter.name}}</span>
+                  <i class="fal fa-caret-down"></i>
+                </div>
+                <div class="chapterLine"></div>
+                <ul>
+                  <div class="containerVideo">
+                    <div class="video-list" [ngClass]="{opened: showVideo && i === chapterIndex}">
+                      <li *ngFor="let video of chapter['videos']; let i = index">
+                        <div class="videoName" (click)="selectVideo(video)">
+                          {{video.name}}
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+            </div>
+
+          </div>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

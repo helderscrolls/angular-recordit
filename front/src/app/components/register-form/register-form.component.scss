@@ -1,0 +1,91 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/inputs.scss';
+@import '../../../styles/buttons.scss';
+
+.test {
+  background-color: $black;
+  color: white;
+  height: 100vh;
+  top: 100vh;
+  width: 100vw;
+}
+.register {
+  font-size: 25px;
+  height: 90vh;
+  padding: 5vh;
+
+    .close-register {
+      position: absolute;
+      visibility: hidden;
+      margin-left: 374px;
+      margin-top: -26px;
+
+      i {
+        color: white;
+        visibility: visible;
+        font-size: 20px;
+      }
+    }
+
+    h2 {
+      font-size: 40px;
+      margin-left: 20%;
+      margin-bottom: 50px;
+    }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+
+    .register-fied {
+      display: flex;
+      flex-direction: column;
+      height: 100px;
+
+        label {
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
+
+        input {
+          height: 37px;
+          border-radius: 7px;
+        }
+
+        select {
+          background: $dark-grey;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          font-size: 13px;
+          height: 37px;
+          margin-bottom: 20px;
+          text-align: center;
+          text-indent: 32px;
+          text-transform: uppercase;
+          width: 100%;
+
+          .option {
+            text-align: center;
+          }
+        }
+
+        i {
+          position: absolute;
+          margin-left: 345px;
+          margin-top: 49px;
+          font-size: 15px;
+        }
+    }
+
+    button {
+      font-size: 18px;
+      height: 37px;
+      margin-left: 200px;
+      padding: 0px;
+      width: 175px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div
+  class="list-section"
+  *ngIf="projectsCollection.length > 0"
+>
+  <img
+    class="img-list"
+    src="./../assets/images/no-training.svg"
+    alt="create-project"
+  >
+
+  <div class="lst">
+    <h2 class="ttl">Mes derniers projets</h2>
+
+    <ul
+      class="projects"
+      *ngFor="let project of projectsCollection"
+    >
+      <li>
+        <a
+          href
+          class="project"
+          [innerHTML]="project.name"
+          (click)="openRecord(project.id, $event)"
+        ></a>
+
+        <div class="description-actions">
+          <app-description-popover [data]="project"></app-description-popover>
+
+          <i
+            class="icon fas fa-edit"
+            (click)="editDescription(project)"
+          ></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

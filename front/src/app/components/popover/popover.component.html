@@ -1,0 +1,18 @@
+<div class="remove-container" [ngClass]="{show: show}">
+  <div class="popover-background"></div>
+  <div class="popover-container">
+    <div
+      class="popover"
+    >
+      <div class="popUp">
+        <span class="question">Confirmer la suppression ?</span>
+      </div>
+
+      <div class="answer">
+        <button class="btn red" (click)="deleteElement()">Oui</button>
+
+        <button class="btn blue" (click)="closePopUp()">Non</button>
+      </div>
+    </div>
+  </div>
+</div>

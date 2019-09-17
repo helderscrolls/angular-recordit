@@ -1,0 +1,93 @@
+@import '../../../styles/colors.scss';
+
+.get-ready {
+  color: white;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+
+  .bloc-total {
+    height: 460px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .chapter-title {
+      background: $dark-grey;
+      display: grid;
+      font-size: 24px;
+      grid-template-columns: auto 9% 9%;
+      padding: 15px 0 15px 15px;
+    }
+
+    .bloc-video {
+      font-size: 20px;
+      margin: 10px;
+      margin-bottom: 20px;
+    }
+
+    .video-grid {
+      border-bottom: 1px solid $dark-grey;
+      cursor: pointer;
+      color: white;
+      display: grid;
+      grid-template-columns: auto 7% 7% 7% 7% 7%;
+      height: 30px;
+      position: relative;
+
+      &.selected {
+        background: white;
+        color: $black;
+      }
+
+      a {
+        align-items: center;
+        display: flex;
+        padding-left: 15px;
+      }
+
+      i {
+        align-items: center;
+        display: flex;
+      }
+    }
+
+    .icon {
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &.check {
+        color: greenyellow;
+        cursor: default;
+        transform: none !important;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.save {
+  .record-title {
+    font-size: 20px;
+    height: 35px;
+
+    &.disable {
+      color: $dark-grey;
+    }
+  }
+}
+
+app-description {
+  background-color: $black;
+  height: 100vh;
+  position: absolute;
+  top: 100vh;
+  transition: top 0.3s ease-out;
+  width: 100vw;
+
+  &.showDescriptionPanel {
+    top: 0vh;
+  }
+}

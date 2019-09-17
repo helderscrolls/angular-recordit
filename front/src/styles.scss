@@ -1,0 +1,134 @@
+@import "styles/reset";
+@import "styles/colors";
+@import "styles/buttons";
+@import "styles/inputs";
+@import "styles/auth";
+
+* {
+  font-family: 'Lato', sans-serif;
+  outline: none;
+}
+
+html, body, app-root {
+  min-height: 750px;
+  min-width: 450px;
+  max-width: 1350px;
+  max-height: 1016px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.save {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 140px;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+}
+
+.display-videos-list {
+  background-color: $black;
+  justify-content: center;
+  padding: 20px 10px;
+  text-align: left;
+  .bck-clr {
+    background-color: $dark-grey;
+    border-radius: 10px;
+    border-color: white;
+    overflow: scroll;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+    
+    /* .projectLine {
+      border: solid 0.2px $medium-grey;
+      margin-left: 20px;
+      width: 343px;
+      margin-bottom: 5px;
+    } */
+    .projectName {
+      color: white;
+      display: flex;
+      flex-flow: nowrap;
+      font-weight: bold;
+      justify-content: space-between;
+      margin-left: 20px;
+      margin-top: 15px;
+      .fal {
+        margin-right: 70px; 
+        font-size: xx-large;
+        
+      }
+    }
+
+    .chapterLine {
+      border: solid 0.5px $regular-grey;
+      margin-left: 40px;
+      width: 270px;
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
+    .chapterName {
+      color: white;
+      display: flex;
+      flex-flow: nowrap;
+      font-weight: bold;
+      justify-content: space-between;
+      margin-left: 40px;
+      cursor: pointer;
+      
+      .fal{
+        margin-right: 100px;
+        font-size: x-large;
+        width: 10px;
+        
+      }
+    }
+    .videoName {
+      color: white;
+      font-size: 15px;
+      margin-left: 60px;
+    }
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-around;
+  margin-top: 350px;
+
+  blue-file { 
+    width: 200px;
+    .file-cta,
+    .file-name {
+      background-color: $dark-grey !important;
+      border-color: $dark-grey !important;
+      color: white !important;
+      width: 200px;
+      max-width: 17em;
+    
+    }
+  }
+
+  .actions{
+    text-align: center;
+
+    .button,
+    .version {
+      @extend .btn;
+      @extend .regular-grey;
+      height: 50px;
+      width: 200px;
+
+      &:hover{ 
+        background-color: $dark-grey;
+      }
+    }
+  }
+}

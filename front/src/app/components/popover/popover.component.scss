@@ -1,0 +1,66 @@
+@import '../../../styles/colors.scss';
+
+.remove-container {
+  .popover-container, .popover-background {
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s linear;
+    visibility: hidden;
+  }
+
+  &.show {
+    .popover-container, .popover-background {
+      opacity: 1;
+      transition: visibility 0s, opacity 0.3s linear 0.1s;
+      visibility: visible;
+    }
+
+    .popover-background {
+      opacity: 0.6;
+    }
+  }
+}
+
+.popover-container, .popover-background {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+.popover-background {
+  background: black;
+  position: absolute;
+  z-index: 999;
+}
+
+.popover {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px -7px black;
+  overflow: hidden;
+  position: absolute;
+  z-index: 99999;
+
+  .popUp {
+    background-color:  $black;
+    padding: 20px;
+    text-align: center;
+
+    .question {
+      color: white;
+    }
+  }
+
+  .answer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    .btn {
+      margin: 10px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import '../../../styles/colors.scss';
+
+.description {
+  display: flex;
+  justify-content: center;
+
+  i {
+    line-height: 30px;
+  }
+
+  .show-description {
+    color: $black;
+    left: 5%;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 90%;
+    z-index: 99999;
+
+    .header {
+      background-color: $medium-grey;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    p {
+      background-color: $light-grey;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  &:hover {
+    .show-description {
+      max-height: 200px;
+      min-height: 30px;
+      padding: 5px;
+      transition: max-height ease 0.4s;
+      overflow: scroll;
+
+      .header, p {
+        padding: 5px;
+      }
+    }
+  }
+}

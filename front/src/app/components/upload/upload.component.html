@@ -1,0 +1,22 @@
+<section>
+	<div class="version">
+   <a
+   	class="next btn regular-grey"
+   	(click)="onSubmit()"
+   >
+   	Version)-V
+   </a>
+	</div>
+	<lib-upload-front
+		buttonText="Envoyer"
+		buttonClass="is-grey"
+		fileClass="is-small is-centered"
+		fileLabel="Ajouter un fichier"
+		[sendOneFile]="true"
+		[displayButton]="true"
+		[metadatas]="metadatas"
+		(filesInformationsEvent)="test($event)"
+		(allFilesSentEvent)="test($event)"
+		(allFilesSentErrorEvent)="test($event)"
+	></lib-upload-front>
+</section>

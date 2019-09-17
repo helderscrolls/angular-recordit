@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Record</title>
+  <base href="/">
+
+  <meta name="viewport" cowindowtent="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+  <script>
+    window.nw_global = window.global;
+    window.global = undefined;
+
+    var fs = window.nw.require('fs-extra');
+    var robotjs = window.nw.require('robotjs');
+    var slugify = window.nw.require('slugify');
+    var zipFolder = window.nw.require('zip-a-folder');
+    var duration = window.nw.require('get-video-duration');
+    var cp = window.nw.require('child_process');
+    var os = window.nw.require('os');
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

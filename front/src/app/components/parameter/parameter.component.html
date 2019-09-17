@@ -1,0 +1,64 @@
+<section class="parameter">
+  <form class="parameter-form">
+    <div *ngFor="let shortcut of shortcutsCollection">
+      <label>{{ shortcut.label }}</label>
+
+      <span class="shortcut">
+        <span *ngIf="!shortcut.shortcut || !shortcut.shortcut.length">Aucun raccourci</span>
+        <span *ngFor="let key of shortcut.shortcut; let i = index">
+          <span class="key">
+            {{ key }}
+          </span>
+          <span class="fa fa-plus" *ngIf="i !== shortcut.shortcut.length - 1"></span>
+        </span>
+        <span
+          class="fa fa-eraser"
+          (click)="clearShotcut(shortcut)"
+          *ngIf="shortcut.isActive"
+        ></span>
+        <span
+          class="fa fa-check"
+          (click)="stopShortcutRecord(shortcut)"
+          *ngIf="shortcut.isActive"
+        ></span>
+        <span
+          class="fa fa-edit"
+          (click)="recordShortcut(shortcut)"
+          *ngIf="!shortcut.isActive"
+        ></span>
+      </span>
+    </div>
+
+    <label>Emplacements des projets</label>
+    <button
+      class="btn file regular-grey bold"
+      (click)="clickOnProjectsDirectory()"
+      [innerHTML]="projectsDirectory || 'Choisir un chemin'"
+    ></button>
+    <input
+      type="file"
+      name="projectsDirectory"
+      nwdirectory
+      id="projectsDirectory"
+      [(ngModel)]="projectsDirectory"
+      (change)="saveToLocalStorage('projectsDirectory')"
+    />
+
+    <label>Emplacements des vidéos</label>
+    <button
+      class="btn file regular-grey bold"
+      (click)="clickOnVideosDirectory()"
+      [innerHTML]="videosDirectory || 'Choisir un chemin'"
+    ></button>
+    <input
+      type="file"
+      name="videosDirectory"
+      nwdirectory
+      id="videosDirectory"
+      [(ngModel)]="videosDirectory"
+      (change)="saveToLocalStorage('videosDirectory')"
+    />
+  </form>
+</section>
+
+

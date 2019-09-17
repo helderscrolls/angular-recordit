@@ -1,0 +1,60 @@
+@import '../../../styles/colors.scss';
+
+.config-index-container {
+  color: white;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+
+  .index {
+    height: 460px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .fa {
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .add-chapter {
+      font-size: 16px;
+      margin: 10px;
+      position: relative;
+
+      input {
+        font-size: 16px;
+        width: 369px;
+      }
+
+      .btn.only-icon{
+        padding: 12px;
+        position: absolute;
+        margin-left: 14px;
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+
+  .save-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+  app-get-ready {
+    background-color: $black;
+    height: 81vh;
+    position: absolute;
+    top: 100vh;
+    transition: top 0.3s ease-out;
+    width: 100vw;
+
+    &.showGetReadyPanel {
+      top: 0;
+  }
+}

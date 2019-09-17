@@ -1,0 +1,16 @@
+<div class="description">
+  <i
+    class="far fa-info-circle"
+  ></i>
+
+  <div class="show-description">
+    <div class="header">
+      <h3 [innerHTML]="data.name"></h3>
+      <span
+        [innerHTML]="data.duration | duration"
+        *ngIf="data.duration"
+      ></span>
+  </div>
+    <p [innerHTML]="data.description"></p>
+  </div> 
+</div>

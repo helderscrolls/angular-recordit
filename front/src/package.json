@@ -1,0 +1,13 @@
+{
+  "name": "Record'it",
+  "main": "index.html",
+  "nodejs": true,
+  "no-edit-menu": true,
+  "window": {
+    "toolbar": true,
+    "fullscreen": false,
+    "width": 450,
+    "height": 750,
+    "resizable": false
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/inputs.scss";
+@import "../../../styles/buttons.scss";
+
+section {
+    min-height: 750px;
+    min-width: 450px;
+    width: 1350px;
+    height: 750px;
+    overflow: hidden;
+    position: relative;
+    background-color: $black;
+    display: flex;
+  }

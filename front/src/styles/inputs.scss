@@ -1,0 +1,31 @@
+/*
+  file-input class is used to hide file inputs
+
+  text-input class is used
+
+*/
+.file-input {
+  display: none;
+}
+
+.text-input {
+  border: 0;
+  color: white;
+  height: 30px;
+  text-align: center;
+
+  &.black {
+    background-color: $black;
+    border: 2px solid $black;
+  }
+
+  &.dark-grey {
+    background-color: $dark-grey;
+    border: 2px solid $dark-grey;
+  }
+
+  &.border-bottom {
+    background-color: $black;
+    border-bottom: 2px solid $dark-grey;
+  }
+}

@@ -1,0 +1,69 @@
+@import '../../../styles/colors.scss';
+
+.index-get-record {
+  color: white;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+
+  .bloc-total-get-record {
+    height: 460px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+.timerContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
+  .timer {
+    color: white;
+    font-size: 3rem;
+  }
+
+  .recordButton {
+    bottom: 25px;
+  }
+}
+
+.save {
+  flex-direction: row;
+
+  .recordButton {
+    margin: 10px;
+
+    .fa {
+      font-size: 20px;
+    }
+  }
+}
+
+.backgroundAnimation {
+  animation: change-color 360s linear forwards;
+}
+
+@keyframes change-color {
+  0% {
+    background-color: $dark-grey;
+  }
+
+  20% {
+    background-color: $dark-grey;
+  }
+
+  60% {
+    background-color: $yellow-timer
+  }
+
+  85% {
+    background-color:  $orange-timer;
+  }
+
+  100% {
+    background-color: $red-timer;
+  }
+}

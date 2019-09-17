@@ -1,0 +1,32 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/inputs.scss";
+@import "../../../styles/buttons.scss";
+
+.display-videos-list {
+  width: 450px;
+  height: 750px;
+
+  a {
+    color: white;
+  }
+
+  .fal {
+    cursor: pointer;
+  }
+
+  .chapter-list, .video-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height ease-in-out 0.3s;
+    
+    &.opened {
+      max-height: 1000px;
+      transition: max-height ease-in-out 0.3s;
+    }
+  }
+
+  .videoName { 
+    cursor: pointer;
+  }
+}
+

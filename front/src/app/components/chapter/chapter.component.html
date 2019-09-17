@@ -1,0 +1,82 @@
+<div
+  class="chapter"
+  *ngIf="chapter"
+>
+  <div class="title-wrapper">
+    <span (click)="chapter.collapseVideos = !chapter.collapseVideos">
+      <span
+        class="open fa fa-arrow-down"
+        *ngIf="!chapter.collapseVideos"
+      ></span>
+
+      <span
+        class="close fa fa-arrow-right"
+        *ngIf="chapter.collapseVideos"
+      ></span>
+    </span>
+
+    <div class="ttl">
+      <h3 class="chapter-title">{{ chapter.name }}</h3>
+
+      <span *ngIf="chapter.videos.length > 0">
+        ({{ chapter.videos.length }})
+      </span>
+    </div>
+
+    <span
+      class="clew"
+      *ngIf="chapter.displaySubClew"
+    >
+      Vidéo
+    </span>
+
+    <span class="move-index">
+        <i
+          class="fas fa-caret-up"
+          (click)="moveChapterIndex('up')"
+        ></i>
+
+        <i
+          class="fas fa-caret-down"
+          (click)="moveChapterIndex('down')"
+        ></i>
+    </span>
+
+    <span
+      class="dlt fa fa-trash"
+      (click)="openPopover()"
+    ></span>
+  </div>
+
+
+  <div
+    class="add-subchapter"
+    *ngIf="!chapter.collapseVideos"
+  >
+    <input
+      #videoNameElement
+      class="text-input black"
+      placeholder="Nom de la vidéo"
+      type="text"
+      (keydown)="pressEnter($event)"
+      [(ngModel)]="videoName"
+    />
+
+    <span
+      class="add fa fa-plus"
+      (click)="addVideo(); chapter.collapseVideos = false"
+    ></span>
+  </div>
+
+  <div
+    class="collapse"
+    *ngIf="!chapter.collapseVideos"
+  >
+  <app-video
+    [video]="video"
+    (moveVideoEvent)="moveVideoIndex($event ,i, video,chapter.videos)"
+    *ngFor="let video of chapter.videos; let i = index"
+  ></app-video>
+  </div>
+</div>
+

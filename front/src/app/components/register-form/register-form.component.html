@@ -1,0 +1,137 @@
+<div class="test">
+  <section class="register">
+
+    <button routerLink="" class="close-register">
+      <i class="fal fa-times"></i>
+    </button>
+
+    <h2>
+      S'enregistrer
+    </h2>
+
+    <form 
+      class="register-form"
+      [formGroup]="formSignup" 
+      (ngSubmit)="onSubmit()" 
+    >
+
+      <div class="register-fied">
+        <label>Prénom</label>
+
+        <input 
+          class="text-input dark-grey" 
+          formControlName="firstname" 
+          type="text" 
+        />
+
+        <label 
+        class="text-danger"
+        *ngIf="formSignup.controls['firstname'].hasError('required') 
+        && formSignup.controls['firstname'].touched"
+        >
+          Prénom obligatoire !
+        </label>
+      </div>
+
+      <div class="register-fied">
+        <label>Nom</label>
+
+        <input 
+          class="text-input dark-grey" 
+          formControlName="lastname" 
+          type="text" 
+        />
+
+        <label 
+        class="text-danger"
+        *ngIf="formSignup.controls['lastname'].hasError('required') 
+        && formSignup.controls['lastname'].touched"
+        >
+          Nom obligatoire !
+        </label>
+      </div>
+
+      <div class="register-fied">
+        <label>Rôle</label>
+
+        <select formControlName="roles">
+          <option [ngValue]="null">
+            Select a Role
+          </option>
+
+          <option>
+            Monteur
+          </option>
+
+          <option>
+            Formateur
+          </option>
+        </select>
+
+        <label 
+        class="text-danger"
+        *ngIf="formSignup.controls['roles'].hasError('required') 
+        && formSignup.controls['roles'].touched"
+        >
+          Role obligatoire !
+        </label>
+      </div>
+
+      <div class="register-fied">
+        <label>Email</label>
+
+        <input 
+          class="text-input dark-grey" 
+          formControlName="email" 
+          type="email" 
+        />
+
+        <label 
+        class="text-danger"
+        *ngIf="formSignup.controls['email'].hasError('required') 
+        && formSignup.controls['email'].touched"
+        >
+          Adresse mail obligatoire !
+        </label>
+
+        <label 
+        class="text-danger" 
+        *ngIf="formSignup.controls['email'].hasError('email')"
+        >
+          Entrez une adresse mail valide !
+        </label>
+      </div>
+
+      <div class="register-fied">
+        <label>Mot de passe</label>
+
+        <input 
+          class="text-input dark-grey" 
+          formControlName="password" 
+          [type]="show ? 'text' : 'password'" 
+        />
+
+        <i 
+          [class]="show ? 'fas fa-eye' : 'fas fa-eye-slash'" 
+          (click)="password()"
+        ></i>
+
+        <label 
+        class="text-danger"
+        *ngIf="formSignup.controls['password'].hasError('required') 
+        && formSignup.get('password').touched"
+        >
+          Mot de passe de 8 caracteres requis !
+        </label>
+      </div>
+
+      <button 
+        class="btn regular-grey" 
+        [disabled]="formSignup.invalid"
+        type=submit
+      >
+        Créer
+      </button>
+    </form>
+  </section>
+</div>

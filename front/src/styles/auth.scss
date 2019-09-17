@@ -1,0 +1,46 @@
+@import "./colors";
+
+
+lib-authentication,
+lib-send-email ,
+lib-code-password,
+lib-reset-password {
+  a{
+    color: white;
+  }
+
+  .box {
+    background-color: $blue;
+    color: white;
+
+    .title {
+      color: white !important;
+    }
+
+    .label{
+      color: white;
+    }
+
+    .input{
+      border: 2px solid $regular-grey;
+    }
+  }
+
+  .logo{
+    width: 300px !important;
+  }
+}
+
+lib-send-email,
+lib-code-password,
+lib-reset-password {
+  .button.is-info {
+    background-color: white;
+    color: black;
+  }
+
+  btn{
+    background-color: $blue;
+    color: white;
+  }
+}

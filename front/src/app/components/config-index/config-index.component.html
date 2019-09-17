@@ -1,0 +1,43 @@
+<section class="config-index-container">
+  <div class="index">
+    <div class="add-chapter">
+      <input
+        #chapterNameElement
+        class="text-input dark-grey"
+        placeholder="Nom du chapitre"
+        type="text"
+        (keydown)="pressEnter($event)"
+        [(ngModel)]="chapterName"
+      >
+
+      <button
+        class="btn regular-grey only-icon fa fa-plus"
+        (click)="addChapter()"
+      ></button>
+    </div>
+
+    <app-chapter
+      [chapter]="chapter"
+      (moveChapterEvent)="moveChapterIndex($event, i, chapter, indexCollection)"
+      *ngFor="let chapter of indexCollection; let i = index"
+    ></app-chapter>
+  </div>
+
+  <div class="save-container">
+    <button
+      class="recordButton"
+      (click)="isActive()"
+    >
+      <span class="red-dot"></span>
+    </button>
+
+    <button
+      class="saving btn regular-grey big-text"
+      (click)="saveIndex()"
+    >
+      Sauvegarder
+    </button>
+  </div>
+</section>
+
+

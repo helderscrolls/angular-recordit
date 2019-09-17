@@ -1,0 +1,23 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/buttons.scss';
+@import '../../../styles/inputs.scss';
+@import '../../../styles.scss';
+
+section {
+    width: 535px;
+    height: 750px;
+    background-color: $black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .version {
+			display: flex;
+			justify-content: center;
+        a {
+          width: 165px;
+          text-align: center;
+          margin-top: 50px;
+        }
+    }
+}

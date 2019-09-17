@@ -1,0 +1,166 @@
+@import '../styles/colors.scss';
+
+.parameters {
+  color: $light-grey;
+  font-size: 20pt;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.img-logo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  transition: all 0.8s ease;
+  width: 100px;
+
+  &.reduce {
+    filter: grayscale(100%);
+    transform: scale(0.8);
+  }
+
+  &.lower {
+    transform: scale(0.8);
+  }
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 290px;
+}
+
+.actions {
+  display: block;
+  padding-top: 80px;
+  text-align: center;
+
+  .btn {
+    display: inline-block;
+  }
+}
+
+.second-section {
+  background-color: $blue;
+  bottom: 0;
+  height: 250px;
+  position: absolute;
+  width: 100%;
+
+  .img-section {
+    bottom: -50px;
+    width: 90%;
+    position: absolute;
+  }
+
+  &.active {
+    display: none;
+  }
+}
+
+
+.lst-section {
+  background-color: $blue;
+  bottom: 0;
+  height: 250px;
+  position: absolute;
+  width: 100%;
+
+  &.active {
+    display: none;
+  }
+
+  .pic-lst {
+    position: absolute !important;
+    top: 0px !important;
+    width: 20% !important;
+  }
+
+  .lst {
+    line-height: 15px;
+    margin: 15px 25%;
+    width: 100%;
+
+    .more {
+      background: white;
+      border-radius: 20px;
+      bottom: 20px;
+      cursor: pointer;
+      height: 35px;
+      position: absolute;
+      right: 25px;
+      width: 35px;
+
+      .fa-plus {
+        color: $blue;
+        left: 11px;
+        position: absolute;
+        top: 9px;
+      }
+    }
+
+    .ttl {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 15px;
+      margin-top: 45px;
+    }
+
+    .projects {
+      margin-top: 5px;
+
+      li {
+        align-items: center;
+        display: flex;
+
+        .project {
+          color: white;
+          display: block;
+          font-weight: 300;
+          height: 20px;
+          overflow: hidden;
+          padding-top: 2px;
+          text-align: left;
+          text-decoration: none;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 50%;
+        }
+
+        .description-actions {
+          align-items: center;
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          width: 10%;
+        }
+      }
+    }
+  }
+}
+
+.homepage-content {
+  transition: all 0.3s ease-out;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.panel {
+  background-color: $black;
+  height: 81vh;
+  position: absolute;
+  top: 100vh;
+  transition: top 0.3s ease-out;
+  width: 100vw;
+
+  &.active {
+    top: 20vh;
+  }
+}
+
+app-parameter {
+  overflow: auto;
+}

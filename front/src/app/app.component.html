@@ -1,0 +1,102 @@
+<span
+  class="fas parameters"
+  [ngClass]="{ 'fa-cog': !displayPanelsService.panels.parameter, 'fa-times': thereIsAnActivePanel() }"
+  (click)="handleClosePanel()"
+></span>
+
+<div class="homepage-container">
+  <img
+    class="img-logo"
+    src="assets/images/microphone.png"
+    [ngClass]="{ reduce: displayPanelsService.panels.configProject || displayPanelsService.panels.projectsList || displayPanelsService.panels.getReady || displayPanelsService.panels.parameter || displayPanelsService.panels.description, lower: displayPanelsService.panels.configProject || displayPanelsService.panels.projectsList || displayPanelsService.panels.getReady || displayPanelsService.panels.parameter }"
+  />
+    <div
+      class="homepage-content"
+      [ngClass]="{ hidden: displayPanelsService.panels.configProject || displayPanelsService.panels.projectsList || displayPanelsService.panels.getReady || displayPanelsService.panels.parameter || displayPanelsService.panels.description }">
+    <img
+      alt="logo"
+      class="logo"
+      src="assets/images/recordit-logo.png"
+    />
+
+    <div class="actions">
+      <a
+        class="btn blue"
+        (click)="showProjectConfig()"
+      >
+        Créer un nouveau projet
+      </a>
+    </div>
+
+    <div
+      [ngClass]="{ active: projectsCollection.length == 0 || projectsCollection.length > 0 }"
+    >
+      <div
+          class="second-section"
+          *ngIf="projectsCollection.length == 0"
+        >
+        <img
+          alt="create-project"
+          class="img-section"
+          src="assets/images/no-training.svg"
+        />
+      </div>
+
+      <div
+        class="lst-section"
+        *ngIf="projectsCollection.length > 0"
+      >
+        <img
+          alt="create-project"
+          class="pic-lst"
+          src="./../assets/images/no-training.svg"
+        />
+
+        <div class="lst">
+          <h2 class="ttl">Mes derniers projets</h2>
+
+          <div class="more">
+            <span
+              class="add fa fa-plus"
+              (click)="getProjects()"
+            ></span>
+          </div>
+
+          <ul
+            class="projects"
+            *ngFor="let project of projectsCollection; let id = index"
+          >
+            <li>
+              <a
+                class="project"
+                href=""
+                (click)="openRecord(project.id, $event)"
+                [innerHTML]="project.name"
+              ></a>
+
+              <div class="description-actions">
+                <app-description-popover [data]="project"></app-description-popover>
+
+                <i
+                  class="icon fas fa-edit"
+                  (click)="editDescription(project)"
+                ></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<app-popover></app-popover>
+
+<app-config-project class="panel" [ngClass]="{active: displayPanelsService.panels.configProject}"></app-config-project>
+<app-parameter class="panel" [ngClass]="{active: displayPanelsService.panels.parameter}"></app-parameter>
+<app-projects-list class="panel" [ngClass]="{active: displayPanelsService.panels.projectsList}"></app-projects-list>
+<app-get-ready class="panel" [ngClass]="{active: displayPanelsService.panels.getReady }"></app-get-ready>
+<app-record class="panel" [ngClass]="{active: displayPanelsService.panels.record }"></app-record>
+<app-description class="panel" [ngClass]="{active: displayPanelsService.panels.description }"></app-description>

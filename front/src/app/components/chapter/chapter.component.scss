@@ -1,0 +1,97 @@
+@import '../../../styles/colors.scss';
+
+.chapter {
+  font-size: 14px;
+  padding-bottom: 9px;
+
+  .title-wrapper {
+    align-items: center;
+    display: grid;
+    font-size: 12px;
+    grid-column-gap: 6px;
+    grid-template-columns: 20px 305px 40px 40px;
+    line-height: 40px;
+    padding: 4px 10px 7px;
+    position: relative;
+
+    .open {
+      margin-right: 10px;
+    }
+
+    .close {
+      margin-right: 10px;
+    }
+
+    .ttl {
+      width: 322px;
+
+      .fa {
+        cursor: pointer;
+        font-size: 11px;
+      }
+
+      .chapter-title {
+        display: inline-block;
+        font-size: 26px;
+        padding-right: 5px;
+        width: 85%;
+        word-wrap: break-word;
+      }
+    }
+
+    .clew {
+      position: absolute;
+      right: 55px;
+    }
+
+    .dlt {
+      background: $dark-grey;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 12px;
+      height: 35px;
+      line-height: 35px;
+      max-height: 35px;
+      max-width: 35px;
+      text-align: center;
+      width: 35px;
+    }
+
+    .popOpen {
+      display: none;
+      }
+
+    .popDown {
+      display: block;
+    }
+  }
+
+  .add-subchapter {
+    background-color: $dark-grey;
+    font-size: 16px;
+    position: relative;
+
+    input {
+      font-size: 13px;
+      margin: 10px;
+      width: 368px;
+    }
+    .fa {
+
+      background: $black;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 12px;
+      height: 35px;
+      margin-left: -1px;
+      margin-top: 10px;
+      padding: 12px;
+      position: absolute;
+      right: 22px;
+      width: 35px;
+    }
+  }
+}
+

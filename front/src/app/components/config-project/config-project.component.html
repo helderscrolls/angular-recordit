@@ -1,0 +1,92 @@
+<section class="config-project">
+  <div
+    class="overlay-error"
+    *ngIf="!this.parameterConfigured && displayOverlay"
+  >
+  </div>
+
+  <div
+    class="unassigned-parameters"
+    *ngIf="!this.parameterConfigured && displayOverlay"
+  >
+    <span class="error-message">
+      Vous n'avez pas configuré vos paramètres.
+    </span>
+
+    <span
+      class="go-to-parameters"
+      (click)="diplayParameterPanel()"
+    >
+      Ouvrir le panneau de paramètre
+    </span>
+</div>
+
+  <form [formGroup]="infoForm" (submit)="completeIndex()">
+    <label> Nom du projet :</label>
+
+    <input
+      autocomplete="off"
+      class="form-control text-input border-bottom"
+      formControlName="name"
+      id="name"
+      type="text"
+    >
+
+    <label>Type des exercices :</label>
+
+    <select
+      class="form-control"
+      formControlName="options"
+      id="options"
+    >
+      <option
+        class="option"
+        value=""
+      >
+        Choissisez un type
+      </option>
+
+      <option
+        class="option"
+        value="project"
+      >
+        Projet complet
+      </option>
+
+      <option
+        class="option"
+        value="files"
+      >
+        Fichiers indépendants
+      </option>
+    </select>
+
+   <label> Chemin des fichiers :</label>
+    <button
+      class="btn regular-grey file bold"
+      (click)="excercicePath()"
+      [innerHTML]="infoForm.get('exerciceDirectory').value || 'Emplacement des exercices'">
+    </button>
+
+    <input
+      class="file-input"
+      formControlName="exerciceDirectory"
+      id="exerciceDir"
+      nwdirectory
+      type='file'
+    />
+
+    <button
+      class="next btn big-text regular-grey"
+      (click)="completeIndex()"
+      [ngClass]="{disable: !this.infoForm.valid || !this.parameterConfigured}"
+      >
+      Remplir l'index
+      <span class="far fa-angle-right"></span>
+    </button>
+  </form>
+</section>
+
+<app-config-index [ngClass]="{showConfigIndexPanel: displayPanelsService.panels.configIndex}"></app-config-index>
+
+

@@ -1,0 +1,192 @@
+/*
+  .button class for all buttons
+
+  it can be .blue or .regular-grey
+    .regular-grey can have a .bordered class
+
+  a button can have a .big-text class to pass font-size from 15px to 20px
+
+  add class .only-icon if button doesn't have text
+
+  .save and .next additional classes set a specific padding to button
+
+  class .bold is set if you want to put text in bold
+
+  .recordButton is specificly made for the buttons used to start or stop recording
+    it doesn't need .button class
+    .red-dot class is used to start recording
+    .black-square is used to stop recording
+
+  .move-index is specialy made for moving index buttons
+*/
+
+.btn {
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 15px 40px;
+  transition: all 0.3s ease;
+
+  &.blue {
+    background: $medium-blue;
+
+    &:hover {
+      background: $blue;
+    }
+  }
+
+  &.red {
+    background: $dark-red;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 1px 4px $medium-grey;
+  }
+
+
+
+  &.big-text {
+    font-size: 20px;
+  }
+
+  &.next {
+    padding: 10px 30px ;
+  }
+
+  &.only-icon {
+    padding: 12px;
+    position: absolute;
+    margin-left: 8px;
+  }
+
+  &.regular-grey {
+    background-color: $dark-grey;
+
+    &.bordered {
+      border: 2px solid white;
+    }
+  }
+
+  &.saving {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.recordButton {
+  background: white;
+  border-radius: 999px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -110%;
+    left: -210%;
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0.0) 100%
+    );
+  }
+
+  &:hover:after {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &:active:after {
+    opacity: 0;
+  }
+
+  &.disable {
+    background-color: $dark-grey;
+
+      &:hover {
+        opacity: 1;
+      }
+  }
+
+  .red-dot {
+    background-color: $dark-red;
+    border-radius: 999px;
+  }
+
+  .black-square {
+    background-color: $black
+  }
+
+  .red-dot,
+  .black-square {
+    display: block;
+    height: 20px;
+    width: 20px;
+
+    &.disable {
+      background-color: $dark-grey;
+    }
+  }
+}
+
+.move-index {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 5px;
+  width: 36px;
+
+  i {
+    background-color: $dark-grey;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    width: 35px;
+
+    &.fa-caret-up {
+      margin-bottom: 5px;
+    }
+  }
+
+  &.in-video {
+    i {
+      background-color: $black;
+    }
+  }
+}

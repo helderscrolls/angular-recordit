@@ -1,0 +1,65 @@
+@import '../../../styles/colors.scss';
+
+.list-section {
+  .img-list {
+    width: 20%;
+  }
+
+  .lst {
+    height: 560px;
+    line-height: 15px;
+    margin: 15px 25%;
+    overflow: scroll;
+    position: absolute;
+    top: 0px;
+    width: 75%;
+
+    .ttl {
+      color: white;
+      font-size: 20px;
+      margin-top: 45px;
+    }
+
+    .projects {
+      margin-top: 10px;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        .project {
+          color: white;
+          display: block;
+          font-weight: 300;
+          overflow: hidden;
+          padding-top: 10px;
+          text-decoration: none;
+          text-align: left;
+          width: 65%;
+          white-space: nowrap;
+        }
+
+        .description-actions {
+          align-items: center;
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          width: 15%;
+        }
+      }
+    }
+  }
+}
+
+app-get-ready {
+  background-color: $black;
+  height: 100vh;
+  position: absolute;
+  top: 100vh;
+  transition: top 0.3s ease-out;
+  width: 100vw;
+
+  &.showGetReadyPanel {
+    top: 0vh;
+  }
+}

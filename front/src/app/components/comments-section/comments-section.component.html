@@ -1,0 +1,22 @@
+<div class="comment-section">
+  <div class="second-background">
+    <div class="display-comments" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+      <ul>
+        <li *ngFor="let comments of commentsByVideo">
+          {{ today | date:'medium' }} <br>
+          {{comments.comment}}
+        </li>
+      </ul>
+    </div>
+    
+    <div class="comment">
+      <form class="register-form" [formGroup]="formAddComments">
+        <input class="text-input dark-grey" formControlName="comment" (keydown)="pressEnter($event)"
+          placeholder="Votre commentaire ..." type="text">
+      </form>
+    </div>
+    <a class="btn blue" (click)="onSubmit()">
+      Publier
+    </a>
+  </div>
+</div>

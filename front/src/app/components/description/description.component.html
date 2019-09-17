@@ -1,0 +1,22 @@
+<section>
+    <div class="bloc-total">
+      <h3 *ngIf="object">{{ object.name }}</h3>
+
+      <label for="description">
+        <p>Description :</p>
+
+        <textarea
+          class="text-input dark-grey"
+          name="description"
+          [(ngModel)]="description"
+        ></textarea>
+      </label>
+    </div>
+
+    <div class="actions">
+        <button
+          class="btn regular-grey"
+          (click)="validateObject()"
+        > Sauvegarder</button>
+    </div>
+  </section>

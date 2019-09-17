@@ -1,0 +1,104 @@
+@import '../../../styles/colors.scss';
+
+* {
+  outline: none;
+}
+
+#videosDirectory, #projectsDirectory {
+  display: none;
+}
+
+.parameter {
+  padding-bottom: 30px;
+}
+
+.parameter-form {
+  color: white;
+  font-size: 20px;
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  position: relative;
+  width: 80%;
+
+  input {
+    background: $black;
+    border: none;
+    border-bottom: 2px solid $dark-grey;
+    color: white;
+    font-size: 20px;
+    padding: 15px 40px;
+    width: calc(100% - 80px);
+  }
+
+  label {
+    display: block;
+    margin: 30px 0 10px 0;
+  }
+
+  .shortcut {
+    align-items: center;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    overflow: hidden;
+
+    .key {
+      background: black;
+      border-radius: 5px;
+      display: inline-block;
+      font-family: "Lucida Console", Monaco, monospace;
+      font-size: 8pt;
+      margin: 0 5px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .fa-edit, .fa-eraser, .fa-check {
+      cursor: pointer;
+      font-size: 16px;
+      position: absolute;
+      right: 10px;
+    }
+
+    .fa-check {
+      right: 35px;
+    }
+  }
+
+  .shortcut {
+    background: $dark-grey;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .btn, .shortcut {
+    margin: 5px 0px;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+  }
+}
+
+.save-container {
+  bottom: 0;
+  height: 20%;
+  position: absolute;
+  width: 100%;
+
+  .line {
+    background-color: white;
+    height: 2px;
+    width: 100%;
+  }
+
+  .save {
+    display: block;
+    margin: 8% auto;
+  }
+}

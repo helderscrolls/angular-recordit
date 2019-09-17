@@ -1,0 +1,22 @@
+<div
+  class="timerContainer"
+  [ngClass]="{backgroundAnimation: backgroundAnimation}"
+>
+  <span class="timer">{{ timerDisplay || '00:00:00'}}</span>
+
+  <div class="save">
+    <button
+      class="recordButton restartButton"
+      (click)="restartRecord()"
+    >
+      <span class="fa fas fa-undo"></span>
+    </button>
+    <button
+      class="recordButton stopButton"
+      (click)="stopTimer()"
+    >
+      <span class="black-square"></span>
+    </button>
+  </div>
+</div>
+
